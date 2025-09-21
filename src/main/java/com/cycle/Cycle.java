@@ -22,4 +22,18 @@ public class Cycle {
 	public void setColor(String color) {
 		this.color = color;
 	}
+
+// Override equals method
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Cycle) {
+			Cycle objCycle = (Cycle) obj;
+			if (this.color.equals(objCycle.color) && (this.model.equals(objCycle.model))) {
+				return true;
+			} else
+				return false;
+		} else
+			return false;
+
+	}
 }
