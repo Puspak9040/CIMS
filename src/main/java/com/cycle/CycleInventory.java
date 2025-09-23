@@ -34,7 +34,7 @@ public class CycleInventory implements Inventory {
 	}
 
 	@Override
-	public void setAddStock(int addStock) {
+	public void addStock(int addStock) {
 		this.addStock = addStock;
 
 	}

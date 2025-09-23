@@ -20,7 +20,7 @@ public class CycleInventoryTest {
 	@Test(description = "Add stock when current stock is below minStock")
 	public void testAddStockBelowMin() {
 		inventory.setCurrentStock(5);
-		inventory.setAddStock(20);
+		inventory.addStock(20);
 		inventory.addStock();
 		Assert.assertEquals(inventory.getCurrentStock(), 25);
 	}
@@ -28,7 +28,7 @@ public class CycleInventoryTest {
 	@Test(description = "Do not add stock when current stock is above minStock")
 	public void testAddStockAboveMin() {
 		inventory.setCurrentStock(15);
-		inventory.setAddStock(20);
+		inventory.addStock(20);
 		inventory.addStock();
 		Assert.assertEquals(inventory.getCurrentStock(), 15);
 	}
