@@ -1,3 +1,4 @@
+
 package com.cycle;
 
 import java.time.LocalDate;
@@ -33,7 +34,7 @@ public class CycleInventory implements Inventory {
 	}
 
 	@Override
-	public void setAddStock(int addStock) {
+	public void addStock(int addStock) {
 		this.addStock = addStock;
 
 	}
@@ -67,7 +68,8 @@ public class CycleInventory implements Inventory {
 	@Override
 	public void purchase(int purchase) {
 		if (purchase > 0 && purchase <= currentStock) {
-			currentStock -= currentStock;
+			currentStock -= purchase;
+
 			System.out.println("purchase successfully.the current stock is" + currentStock);
 		} else {
 			System.out.println("insufficent stock the current stock is" + currentStock);
@@ -78,6 +80,7 @@ public class CycleInventory implements Inventory {
 	// getter for person name
 	public String getPersonName() {
 		return personName;
+
 	}
 
 	// setter for personname
