@@ -1,8 +1,25 @@
 package com.cycle;
 
-public class Cycle {
+import java.io.Serializable;
+
+public class Cycle implements Serializable {
 	private String model;
 	private String color;
+
+	public Cycle() {
+
+	}
+
+	public Cycle(String model) {
+		this.model = model;
+
+	}
+
+	public Cycle(String model, String color) {
+		this(model);
+		this.color = color;
+
+	}
 
 //getter for model
 	public String getModel() {
@@ -35,5 +52,10 @@ public class Cycle {
 		} else
 			return false;
 
+	}
+
+	@Override
+	public String toString() {
+		return "Cycle [model=" + model + ", color=" + color + "]";
 	}
 }

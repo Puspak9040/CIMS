@@ -1,5 +1,7 @@
 package com.test;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.lang.reflect.Method;
 
 import org.testng.Assert;
@@ -43,8 +45,8 @@ public class CycleTest {
 	@Test(description = "verify default constructor , objects should not be null")
 	public void testCycleInitialization() {
 
-		Assert.assertNotNull(cycle1);
-		Assert.assertTrue(cycle1 instanceof Cycle);
+		AssertJUnit.assertNotNull(cycle1);
+		AssertJUnit.assertTrue(cycle1 instanceof Cycle);
 	}
 
 	@Test(description = "verify object's attributes are null with default constructor and objet's attributes are set using setters")
@@ -55,15 +57,15 @@ public class CycleTest {
 		cycle1.setColor("Yellow");
 		cycle1.setModel("Atlas");
 
-		Assert.assertEquals(cycle1.getColor(), "Yellow");
-		Assert.assertEquals(cycle1.getModel(), "Atlas");
+		AssertJUnit.assertEquals(cycle1.getColor(), "Yellow");
+		AssertJUnit.assertEquals(cycle1.getModel(), "Atlas");
 	}
 
 	@Test(description = "== compares memory of 2 objects which should be unique for both")
 	public void testCycleEqualsOperator() {
 		cycle2.setColor("Yellow");
 		cycle2.setModel("Atlas");
-		Assert.assertEquals(cycle1 == cycle2, false);
+		AssertJUnit.assertEquals(cycle1 == cycle2, false);
 	}
 
 	@Test(dependsOnMethods = "testGetters", description = "verify equals method must be overloaded to operate using equals method")
@@ -74,6 +76,6 @@ public class CycleTest {
 		 * equals by his own, as default equals does memory comparison.
 		 */
 
-		Assert.assertEquals(cycle1.equals(cycle2), true);
+		AssertJUnit.assertEquals(cycle1.equals(cycle2), true);
 	}
 }
