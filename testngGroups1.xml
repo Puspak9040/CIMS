@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<groups>
+			<run>
+				<include name="regression">
+				<inclue name="functional"></inclue>
+				</include>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.test.CycleInventoryTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
